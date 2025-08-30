@@ -1,0 +1,28 @@
+GET http://localhost:3000/api/footer/list HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/sharepoint/librarylist HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/sharepoint/testdown HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/magnolia-filemanageruploadFileSP/uploadFileSP HTTP/1.1
+
+###
+
+
+GET http://localhost:3000/api/magnoliaupload/upload HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/sharepoint/sync HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/uploader/sharepointUpload HTTP/1.1
+
+###

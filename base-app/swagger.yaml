@@ -1,0 +1,243 @@
+tags:
+# - name: Users Account Summary
+#   description: users API
+
+- name: Bookmark
+  description: Bookmark API
+
+- name: User Profile
+  description: User Profile API
+
+paths:
+# [GET] Users
+  # /api/account/credit/summary:
+  #   get:
+  #     tags:
+  #     - Users Account Summary
+  #     summary: Get Account summary details from DG
+  #     responses:
+  #       200:
+  #         description: 'OK'
+  #       500:
+  #         description: 'Server Error'
+
+# [GET] Bookmark List
+  /api/bookmarks/list:
+    get:
+      tags:
+      - Bookmark
+      summary: Get Bookmark List details from Json File
+      
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# [POST] Bookmark List
+  /api/update/bookmark:
+    post:
+      tags:
+      - Bookmark
+      summary: Add and update bookmark in BookmarkList
+      parameters:
+      - name: body
+        in: body
+        description: TODO
+        required: true
+        schema: {
+              "type": "object",
+              "properties": {
+                "businessConnectUserBookmark": {
+                  "type": "object",
+                  "properties":{
+                    "bookmark":{
+                      "type":"object",
+                      "properties":{
+                        "bookmarkId":{
+                          "type":"integer"
+                        }
+                      }
+                    },
+                    "profile":{
+                      "type":"object",
+                      "properties":{
+                        "profileId":{
+                          "type":"integer"
+                        }
+                      }
+                    },
+                    "userBookmark":{
+                      "type":"object",
+                      "properties":{
+                        "userBookmarkCreatedByUserProfileId":{
+                          "type":"integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+        }
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# [PUT] Bookmark List
+  /api/remove/bookmark:
+    put:
+      tags:
+      - Bookmark
+      summary: Remove Bookmark from BookMarkList.
+      parameters:
+      - name: body
+        in: body
+        description: TODO
+        required: true
+        schema: {
+              "type": "object",
+              "properties": {
+                "profileId": {
+                  "type": "integer"
+                },
+                "bookmarkId": {
+                  "type":"integer"
+                }
+              }
+        }
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# [GET] Get UserProfile Detail
+  /api/users/agent/profile/detail:
+    get:
+      tags:
+      - User Profile
+      summary: Get User Agent Profile Detail
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# [POST] Update UserProfile
+  /api/users/agents/profile/add:
+    post:
+      tags:
+      - User Profile
+      summary: Create User Agent Profile
+      parameters:
+      - name: body
+        in: body
+        description: TODO
+        required: true
+        schema: {
+              "type": "object",
+              "properties": {
+                "agentsProfilesApplicationNavigations": {
+                  "type": "object",
+                  "properties":{
+                    "user":{
+                      "type":"object",
+                      "properties":{
+                        "organizationId":{
+                          "type":"integer"
+                        },
+                        "logonName":{
+                          "type":"string"
+                        }
+                      },
+                    },
+										"profile":{
+											"type":"object",
+											"properties":{
+												"profileId":{
+													"type":"integer"
+												},
+												"createdByUserProfileId":{
+													"type":"integer"
+												}
+											}
+										},
+                  }
+                },
+              }
+        }
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# [Put] UserProfile Update
+  /api/users/agents/profile/update:
+    put:
+      tags:
+      - User Profile
+      summary: Update User Agent Profile Detail.
+      parameters:
+      - name: body
+        in: body
+        description: Update User Profile
+        required: true
+        schema: {
+              "type": "object",
+              "properties": {
+                "agentsProfilesApplicationNavigations": {
+                  "type": "object",
+									"properties":{
+										"user":{
+											"type":"object",
+											"properties":{
+												"lastAlertId":{
+													"type":"integer"
+												},
+												"userAliasFirstName":{
+													"type":"string"
+												},
+												"userAliasLastName":{
+													"type":"string"
+												},
+											}
+										},
+										"profile":{
+											"type":"object",
+											"properties":{
+												"profileId":{
+													"type":"integer"
+												},
+												"changedByUserProfileId":{
+													"type":"integer"
+												}
+											}
+										}
+									}
+                },
+              }
+        }
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+      
+
+# [GET] Footer List
+  /api/footer/list:
+    get:
+      tags:
+      - Footer
+      summary: Get Footer List 
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+schemes:
+ - https
+ - http

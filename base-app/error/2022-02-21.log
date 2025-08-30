@@ -1,0 +1,25 @@
+
+2022-02-21 04:39:10 error: uncaughtException: ORA-01008: not all variables bound
+Error: ORA-01008: not all variables bound
+2022-02-21 05:34:34 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/SharePointHelper.ts[0m:[93m80[0m:[93m34[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m80[0m               console.log("{ t }"typeof t);
+[7m  [0m [91m                                 ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/SharePointHelper.ts[0m:[93m80[0m:[93m34[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m80[0m               console.log("{ t }"typeof t);
+[7m  [0m [91m                                 ~~~~~~[0m
+
+    at createTSError (C:\Users\VISIONNET\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:828:12)
+    at reportTSError (C:\Users\VISIONNET\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:832:19)
+    at C:\Users\VISIONNET\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:1299:34
+    at Object.compile (C:\Users\VISIONNET\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:1326:43)
+    at Module.m._compile (C:\Users\VISIONNET\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:1458:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\VISIONNET\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:1462:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
