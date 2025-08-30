@@ -1,0 +1,29 @@
+<mat-card class="example-card" *ngFor="let brthCeremonyDay of brthCeremonyDaysVm">
+    <mat-card-header>
+      <mat-card-title>{{brthCeremonyDay.title}}</mat-card-title>
+      <mat-card-subtitle>Event On : {{brthCeremonyDay.eventOn | amLocale:'en' | amDateFormat:'MMM Do YYYY, h:mm a'}}.<br>Uploaded
+        : {{ brthCeremonyDay.eventOn | amDifference: today :'days' : true | round}} days left.</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{brthCeremonyDay.imageLink}}" width="300" height="200" alt="{{brthCeremonyDay.title}}">
+    <mat-card-content>
+      <p>
+        ShortNote : {{brthCeremonyDay.shortNote }}
+      </p>
+      <p>
+          place : {{brthCeremonyDay.place }}
+        </p>
+        <p>
+            event : {{brthCeremonyDay.event }}
+          </p>
+          <p>
+              category : {{brthCeremonyDay.category }}
+            </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button href="{{brthCeremonyDay.postLink}}" target="_blank">LINK</a>
+      <button mat-button>SHARE</button>
+      <app-schduler link="{{brthCeremonyDay.postLink}}" title="{{brthCeremonyDay.title}}" category="brthceremony" fromPostId="{{brthCeremonyDay.brthCeremonyDayId}}">
+      </app-schduler>
+    </mat-card-actions>
+  </mat-card>
+  

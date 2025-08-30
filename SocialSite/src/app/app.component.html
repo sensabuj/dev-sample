@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container" (backdropClick)="close('backdrop')">
+    <mat-drawer style="width: 120px;text-align: center;" mode="side" #sidenav (keydown.escape)="close('escape')" opened>
+      <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+      <mat-list>
+        <mat-list-item style="height: 80px;width: 80px;">
+          <mat-card style="cursor: pointer;text-align: center;" [routerLink]="['/publish']">
+            <mat-icon>publish</mat-icon>
+            <mat-card-subtitle>Publish</mat-card-subtitle>
+          </mat-card>
+        </mat-list-item>
+        <mat-list-item style="height: 80px;width: 80px;">
+          <mat-card style="cursor: pointer;text-align: center;" [routerLink]="['/item']">
+            <mat-icon>list_alt</mat-icon>
+            <mat-card-subtitle>Items</mat-card-subtitle>
+          </mat-card>
+        </mat-list-item>
+        <mat-list-item style="height: 80px;width: 80px;">
+          <mat-card style="cursor: pointer;text-align: center;" [routerLink]="['/analysis']">
+            <mat-icon>dashboard</mat-icon>
+            <mat-card-subtitle>Analysis</mat-card-subtitle>
+          </mat-card>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <p><button mat-button (click)="sidenav.open()">Open</button></p>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+
+

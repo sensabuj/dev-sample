@@ -1,0 +1,25 @@
+<mat-card class="example-card" *ngFor="let fair of fairsVm">
+  <mat-card-header>
+    <mat-card-title>{{fair.title}}</mat-card-title>
+    <mat-card-subtitle>Event On : {{fair.eventOn | amLocale:'en' | amDateFormat:'MMM Do YYYY, h:mm a'}}.<br>Uploaded
+      : {{ fair.eventOn | amDifference: today :'days' : true | round}} days left.</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{fair.imageLink}}" width="300" height="200" alt="{{fair.title}}">
+  <mat-card-content>
+    <p>
+      ShortNote : {{fair.shortNote }}
+    </p>
+    <p>
+      location : {{fair.location }}
+    </p>
+    <p>
+      duration : {{fair.duration }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button href="{{fair.postLink}}" target="_blank">LINK</a>
+    <button mat-button>SHARE</button>
+    <app-schduler link="{{fair.postLink}}" title="{{fair.title}}" category="fair" fromPostId="{{fair.fairId}}">
+    </app-schduler>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,19 @@
+<mat-card class="example-card" *ngFor="let astronomyDay of astronomyDaysVm">
+  <mat-card-header>
+    <mat-card-title>{{astronomyDay.title}}</mat-card-title>
+    <mat-card-subtitle>Event On : {{astronomyDay.eventOn | amLocale:'en' | amDateFormat:'MMM Do YYYY, h:mm a'}}.<br>Uploaded
+      : {{ astronomyDay.eventOn | amDifference: today :'days' : true | round}} days left.</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{astronomyDay.imageLink}}" width="300" height="200" alt="{{astronomyDay.title}}">
+  <mat-card-content>
+    <p>
+      ShortNote : {{astronomyDay.shortNote }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button href="{{astronomyDay.postLink}}" target="_blank">LINK</a>
+    <button mat-button>SHARE</button>
+    <app-schduler link="{{astronomyDay.postLink}}" title="{{astronomyDay.title}}" category="astronomy" fromPostId="{{astronomyDay.astronomyDayId}}">
+    </app-schduler>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,24 @@
+<mat-card class="example-card" *ngFor="let specialDay of specialDaysVm">
+    <mat-card-header>
+      <mat-card-title>{{specialDay.title}}</mat-card-title>
+      <mat-card-subtitle>Event On : {{specialDay.eventOn | amLocale:'en' | amDateFormat:'MMM Do YYYY, h:mm a'}}.<br>Uploaded
+        : {{ specialDay.eventOn | amDifference: today :'days' : true | round}} days left.</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{specialDay.imageLink}}" width="300" height="200" alt="{{specialDay.title}}">
+    <mat-card-content>
+      <p>
+        ShortNote : {{specialDay.shortNote }}
+      </p>
+      <p>
+          eventType : {{specialDay.eventType }}
+        </p>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button href="{{specialDay.postLink}}" target="_blank">LINK</a>
+      <button mat-button>SHARE</button>
+      <app-schduler link="{{specialDay.postLink}}" title="{{specialDay.title}}" category="specialday" fromPostId="{{specialDay.specialDayId}}">
+      </app-schduler>
+    </mat-card-actions>
+  </mat-card>
+  

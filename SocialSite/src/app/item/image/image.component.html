@@ -1,0 +1,23 @@
+<mat-card class="example-card" *ngFor="let imagePublished of imagePublishedVm">
+  <mat-card-header>
+    <mat-card-title>{{imagePublished.caption}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{imagePublished.publishPathLocal}}" width="300" height="200" alt="{{imagePublished.caption}}">
+  <mat-card-content>
+    <p>
+      name : {{imagePublished.name }}
+    </p>
+    <p>
+      tags : {{imagePublished.tags }}
+    </p>
+    <p>
+      descripsion : {{imagePublished.descripsion }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button href="{{imagePublished.postLink}}" target="_blank">LINK</a>
+    <button mat-button>SHARE</button>
+    <app-schduler link="{{imagePublished.postLink}}" title="{{imagePublished.caption}}" category="imagePublished" fromPostId="{{imagePublished.imagePublishedId}}">
+    </app-schduler>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,2 @@
+G:\Development\Social\Social\SocialSite\obj\Debug\netcoreapp2.0\SocialSite.csprojResolveAssemblyReference.cache
+E:\Development\Social\SocialSite\obj\Debug\netcoreapp2.0\SocialSite.csprojResolveAssemblyReference.cache

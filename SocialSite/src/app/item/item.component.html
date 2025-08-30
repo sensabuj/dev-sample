@@ -1,0 +1,16 @@
+<div fxLayout="row" ngxSplit="row">
+  <div fxFlex="20%">
+    <mat-list>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['youtube']"> <mat-icon>subscriptions</mat-icon>YouTube<mat-divider></mat-divider></mat-list-item>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['birth-day']"> <mat-icon>account_box</mat-icon>Birth Day Text<mat-divider></mat-divider></mat-list-item>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['event-text']"> <mat-icon>event</mat-icon>Event Text<mat-divider></mat-divider></mat-list-item>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['astronomy']"> <mat-icon>event</mat-icon>Astronomy<mat-divider></mat-divider></mat-list-item>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['fair']"> <mat-icon>event</mat-icon>Fair<mat-divider></mat-divider></mat-list-item>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['specialday']"> <mat-icon>event</mat-icon>Special Day<mat-divider></mat-divider></mat-list-item>
+      <mat-list-item style="cursor: pointer;text-align: center;" [routerLink]="['image']"> <mat-icon>image</mat-icon>Image  <mat-divider></mat-divider></mat-list-item>
+    </mat-list>
+  </div>
+  <div fxFlex="80%">
+      <router-outlet></router-outlet>
+  </div>
+</div>

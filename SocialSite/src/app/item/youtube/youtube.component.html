@@ -1,0 +1,49 @@
+<mat-card *ngFor="let youTubeChannel of youTubeChannelVm">
+  <mat-card-title> Channel Title : {{youTubeChannel.title}}</mat-card-title>
+  <mat-card-subtitle>Subscriber Count : {{youTubeChannel.subscriberCount}}</mat-card-subtitle>
+  <mat-card-subtitle>View Count : {{youTubeChannel.viewCount}}</mat-card-subtitle>
+  <mat-card-content>Channel Content <b>{{youTubeChannel.videoCount}}</b> videos.</mat-card-content>
+
+  <a mat-button href="https://www.youtube.com/account_monetization" target="_blank" color="accent">Account Monetization</a>
+  <a mat-button href="https://www.youtube.com/my_videos?o=U" target="_blank" color="accent">My Videos</a>
+  <a mat-button href="https://www.youtube.com/analytics?o=U" target="_blank" color="accent">Analytics</a>
+</mat-card>
+<mat-divider></mat-divider>
+
+<mat-card class="example-card" *ngFor="let youTubeVideo of YouTubeVideoVm">
+  <mat-card-header>
+
+    <mat-card-title>{{youTubeVideo.title}}</mat-card-title>
+    <mat-card-subtitle>Uploaded On : {{youTubeVideo.uploadTime | amLocale:'en' | amDateFormat:'MMM Do YYYY, h:mm a'}}.<br>Uploaded : {{ youTubeVideo.uploadTime | amDifference: today :'days' : true | round}} days before.</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{youTubeVideo.thumbnail}}" width="300" height="200" alt="{{youTubeVideo.title}}">
+  <mat-card-content>
+    <p>
+      Ranking : {{youTubeVideo.ranking }}
+    </p>
+    <p>
+      Like : {{youTubeVideo.likeCount }}
+    </p>
+    <p>
+      View : {{youTubeVideo.viewCount }}
+    </p>
+    <p>
+      Dislike : {{youTubeVideo.dislikeCount }}
+    </p>
+    <p>
+      Duration : {{youTubeVideo.duration }}
+    </p>
+    <p>
+      Favorite : {{youTubeVideo.favoriteCount }}
+
+      Comments : {{youTubeVideo.commentCount }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button href="https://www.youtube.com/analytics?o=U#;fi=v-{{youTubeVideo.videoId}}" target="_blank" >LINK</a>
+    <button mat-button>SHARE</button>
+    <app-schduler link="{{youTubeVideo.videoId}}" title="{{youTubeVideo.title}}" category="youtube" fromPostId="{{youTubeVideo.youTubeVideoId}}" >
+
+    </app-schduler>
+  </mat-card-actions>
+</mat-card>
